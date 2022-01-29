@@ -4,7 +4,7 @@ import cors from "cors";
 import express from "express";
 
 const app = express();
-app.use(cors());
+app.use(cors("*"));
 app.use(express.json());
 // route of users
 app.use("/v1", mainV1);
