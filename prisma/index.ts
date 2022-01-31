@@ -10,9 +10,10 @@ import cors from "cors";
 const prisma = new PrismaClient();
 
 async function main() {
-  const port = process.env.PORT || 80;
   const app = express();
+  const port = process.env.PORT || 4000;
   app.use(cors());
+
   app.use(express.json());
   // product route
   app.use("/product", productsRoute);
