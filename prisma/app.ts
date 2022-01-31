@@ -1,5 +1,4 @@
 import notFound from "../middleware/notFound";
-import cors from "cors";
 import express from "express";
 import productsRoute from "../routes/activties/products";
 import categoriesRoute from "../routes/activties/categories";
