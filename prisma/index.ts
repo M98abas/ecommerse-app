@@ -5,7 +5,7 @@ import categoriesRoute from "../routes/activties/categories";
 import adminRoute from "../routes/web/admin";
 import customersRoute from "../routes/web/customers";
 import ordersRoute from "../routes/activties/orders";
-import { PrismaClient } from ".prisma/client";
+import { PrismaClient } from "@prisma/client";
 import cors from "cors"; 
 const prisma = new PrismaClient();
 
