@@ -6,8 +6,7 @@ import adminRoute from "../routes/web/admin";
 import customersRoute from "../routes/web/customers";
 import ordersRoute from "../routes/activties/orders";
 import { PrismaClient } from ".prisma/client";
-const cors = require("cors");
-
+import cors from "cors"; 
 const prisma = new PrismaClient();
 
 async function main() {
