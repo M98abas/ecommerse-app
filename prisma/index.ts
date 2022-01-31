@@ -11,7 +11,7 @@ const cors = require("cors");
 const prisma = new PrismaClient();
 
 async function main() {
-  const port = process.env.PORT || 4000;
+  const port = process.env.PORT || 80;
   const app = express();
   app.use(cors());
   app.use(express.json());
