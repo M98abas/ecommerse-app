@@ -1,5 +1,5 @@
 import notFound from "../middleware/notFound";
-import * as express from "express";
+const express = require("express");
 import productsRoute from "../routes/activties/products";
 import categoriesRoute from "../routes/activties/categories";
 import adminRoute from "../routes/web/admin";
