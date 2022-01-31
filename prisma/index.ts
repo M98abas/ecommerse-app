@@ -11,6 +11,7 @@ const cors = require("cors");
 const prisma = new PrismaClient();
 
 async function main() {
+  const port = process.env.PORT || 4000;
   const app = express();
   app.use(cors());
   app.use(express.json());
@@ -27,7 +28,7 @@ async function main() {
   // not found route
   app.use(notFound);
 
-  app.listen(3000, () =>
+  app.listen(port, () =>
     console.log("REST API server ready at: http://localhost:3000/v1")
   );
 }
