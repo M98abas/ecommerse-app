@@ -1,5 +1,4 @@
 import notFound from "../middleware/notFound";
-import cors from "cors";
 import * as express from "express";
 import productsRoute from "../routes/activties/products";
 import categoriesRoute from "../routes/activties/categories";
@@ -7,6 +6,7 @@ import adminRoute from "../routes/web/admin";
 import customersRoute from "../routes/web/customers";
 import ordersRoute from "../routes/activties/orders";
 import { PrismaClient } from ".prisma/client";
+const cors = require("cors");
 
 const prisma = new PrismaClient();
 
