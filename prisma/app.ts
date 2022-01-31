@@ -9,7 +9,12 @@ import ordersRoute from "../routes/activties/orders";
 
 const route = express.Router();
 const app = express();
-app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, 
+     Content-Type, Accept");
+    next();
+});
 app.use(express.json());
 // product route
 route.use("/product", productsRoute);
