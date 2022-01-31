@@ -1,12 +1,16 @@
-import productsRoute from "./activties/products";
-import categoriesRoute from "./activties/categories";
-import adminRoute from "./web/admin";
-import customersRoute from "./web/customers";
-import ordersRoute from "./activties/orders";
-const express = require("express");
+import notFound from "../middleware/notFound";
+import cors from "cors";
+import express from "express";
+import productsRoute from "../routes/activties/products";
+import categoriesRoute from "../routes/activties/categories";
+import adminRoute from "../routes/web/admin";
+import customersRoute from "../routes/web/customers";
+import ordersRoute from "../routes/activties/orders";
 
 const route = express.Router();
-
+const app = express();
+app.use(cors());
+app.use(express.json());
 // product route
 route.use("/product", productsRoute);
 // orders
@@ -15,8 +19,9 @@ route.use("/orders", ordersRoute);
 route.use("/category", categoriesRoute);
 // admin
 route.use("/admin", adminRoute);
-
 // customers
 route.use("/customer", customersRoute);
+// not found route
+app.use(notFound);
 
-export default route;
+export default app;
