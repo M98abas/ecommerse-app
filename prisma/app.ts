@@ -6,18 +6,14 @@ import categoriesRoute from "../routes/activties/categories";
 import adminRoute from "../routes/web/admin";
 import customersRoute from "../routes/web/customers";
 import ordersRoute from "../routes/activties/orders";
-
+import * as cors from "cors";
 const route = express.Router();
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, 
-     Content-Type, Accept");
-    next();
-});
+
 // product route
 route.use("/product", productsRoute);
 // orders
