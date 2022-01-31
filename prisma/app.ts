@@ -5,11 +5,17 @@ import categoriesRoute from "../routes/activties/categories";
 import adminRoute from "../routes/web/admin";
 import customersRoute from "../routes/web/customers";
 import ordersRoute from "../routes/activties/orders";
-import * as cors from "cors";
+import cors from "cors";
 const route = express.Router();
 const app = express();
 
-app.use(cors());
+const allowedOrigins = ["*"];
+
+const options: cors.CorsOptions = {
+  origin: allowedOrigins,
+};
+app.use(cors(options));
+
 app.use(express.json());
 
 
