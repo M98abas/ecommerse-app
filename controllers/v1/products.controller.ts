@@ -105,7 +105,7 @@ export default class WebActionsResponse {
     const body = req.body;
     let notValidated = validate(body.name, Validate.category());
     // console.log(body.name, body.description);
-    if (notValidated)
+    if (!notValidated)
       return errRes(
         res,
         "You have been sent an empty string please try again!!!"
