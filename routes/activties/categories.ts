@@ -4,7 +4,7 @@ import authCheck from "../../middleware/auth.admin";
 const route = express.Router();
 
 // add category
-route.post("/", authCheck, WebActionsResponse.addCategory);
+route.post("/add", authCheck, WebActionsResponse.addCategory);
 route.get("/all/:id", authCheck, WebActionsResponse.getAllOneCategories);
 
 // delete category
