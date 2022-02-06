@@ -116,6 +116,7 @@ export default class WebActionsResponse {
       data: {
         name: body.name,
         description: body.description,
+        image: body.image
       },
     });
     return okRes(res, res.json(body));
