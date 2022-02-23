@@ -77,7 +77,7 @@ export default class WebActionsResponse {
     const body = req.body;
     let categoryID: any = parseInt(body.category_id);
     let notValidated = validate(body, Validate.products());
-    if (notValidated)
+    if (!notValidated)
       return errRes(
         res,
         "You have been sent an empty string please try again!!!"
