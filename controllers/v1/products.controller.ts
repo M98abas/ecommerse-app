@@ -104,6 +104,7 @@ export default class WebActionsResponse {
   static async addCategory(req: Request, res: Response): Promise<object> {
     // get body
     const body = req.body;
+    console.log(body);
     let notValidated = validate(body.name, Validate.category());
     // console.log(body.name, body.description);
     if (!notValidated)
