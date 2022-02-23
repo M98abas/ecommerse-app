@@ -77,7 +77,7 @@ export default class WebActionsResponse {
     const body = req.body;
     let categoryID: any = parseInt(body.category_id);
     let notValidated = validate(body, Validate.products());
-    if (!notValidated)
+    if (notValidated)
       return errRes(
         res,
         "You have been sent an empty string please try again!!!"
@@ -104,10 +104,10 @@ export default class WebActionsResponse {
   static async addCategory(req: Request, res: Response): Promise<object> {
     // get body
     const body = req.body;
-    console.log(body);
+    //console.log(body);
     let notValidated = validate(body.name, Validate.category());
     // console.log(body.name, body.description);
-    if (!notValidated)
+    if (notValidated)
       return errRes(
         res,
         "You have been sent an empty string please try again!!!"
