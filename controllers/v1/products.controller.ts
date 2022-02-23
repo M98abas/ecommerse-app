@@ -65,7 +65,7 @@ export default class WebActionsResponse {
       },
     });
     if (category.length != 0) return okRes(res, category);
-     return okRes(res, [{"id":1,"name":"Iphone","description":"None"}]);
+    else return okRes(res, [{"id":1,"name":"Iphone","description":"None"}]);
   }
   /**
    * @param req
