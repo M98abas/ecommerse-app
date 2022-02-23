@@ -22,6 +22,7 @@ export default class WebActionsResponse {
       },
     });
     if (product.length != 0) return okRes(res, product);
+    return okRes(res, product);
     //return errRes(res, "No products in stock now!!");
   }
 
