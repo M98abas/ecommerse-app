@@ -65,7 +65,7 @@ export default class WebActionsResponse {
       },
     });
     if (category.length != 0) return okRes(res, category);
-    //  return errRes(res, "No categorys in stock now!!");
+     return errRes(res, "No categorys in stock now!!");
   }
   /**
    * @param req
