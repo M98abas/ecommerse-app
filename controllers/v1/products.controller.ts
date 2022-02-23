@@ -121,7 +121,7 @@ export default class WebActionsResponse {
         image: body.image
       },
     });
-    return okRes(res, res.json(body));
+    return okRes(res, "Category was Created!");
   }
   /**
    * @param req
