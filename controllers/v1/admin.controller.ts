@@ -66,17 +66,13 @@ export default class AdminController {
     let admin: any = await prisma.admin.findUnique({
       where: { email: body.email },
     });
-    if (admin) {
-      return errRes(res, `admin ${email} already exists`);
-    } else {
-      admin = await prisma.admin.create({
+     admin = await prisma.admin.create({
         data: {
           email: body.email,
           nickname: body.nickname,
           password: body.password,
         },
       });
-    }
     let token = jwt.sign({ email: admin.email }, CONFIG.jwtUserSecret);
     return okRes(res, { token });
   }
